@@ -1,0 +1,242 @@
+:root {
+    --low-priority-color: #de2121;  /* Blue for low priority */
+    --medium-priority-color: #3d0ee6;  /* Orange for medium priority */
+    --high-priority-color: #2ecc71;  /* Green for high priority */
+    --accent-color: #FF007F;  /* Electric Pink */
+    --primary-color: #cee3eb; /* Neon Blue */
+    --secondary-color: #0D0D0D; /* Bright Green */
+    --text-color:#0D0D0D;     /* White text */
+}
+
+#quote-container {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-style: italic;
+    color: #0f0202;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    border: 2px solid black;
+    background-color: #cee3eb;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* HTML base styling */
+html {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16pt;
+  color: var(--text-color);
+}
+
+/* Body styles */
+body {
+    min-height: 100vh;
+    padding: 10px;
+    background-image: url(high-angle-view-weekly-planner-table_260672-207.jpg); /* Background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header styling */
+h1 {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+/* Wrapper for the todo items */
+.wrapper {
+    width: 700px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Input container to position the button inside */
+.input-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Input field for tasks */
+#todo-input {
+    box-sizing: border-box;
+    padding: 12px 20px;
+    width: 100%;
+    background: none;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10000px;
+    border-color: #0D0D0D;
+    font: inherit;
+    color: var(--text-color);
+    caret-color: var(--accent-color);
+}
+
+#todo-input:focus {
+    outline: none;
+}
+
+
+/* Todo item styling */
+.todo {
+    margin-bottom: 10px;
+    padding: 0 16px;
+    background-color: var(--primary-color);
+    border-radius: 150px;
+    border-color: #0D0D0D;
+    display: flex;
+    align-items: center;
+}
+
+/* Task label text styling */
+.todo .todo-text {
+    padding: 15px;
+    padding-right: 0;
+    flex-grow: 1;
+    transition: 200ms ease;
+}
+
+/* Priority-based color changes */
+.todo.low .todo-text {
+    color: var(--low-priority-color); /* Blue for low priority */
+}
+
+.todo.medium .todo-text {
+    color: var(--medium-priority-color); /* Orange for medium priority */
+}
+
+.todo.high .todo-text {
+    color: var(--high-priority-color); /* Green for high priority */
+}
+
+/* Delete button */
+.delete-button {
+    padding: 3px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+
+.delete-button svg {
+    transition: 200ms ease;
+}
+
+.delete-button:hover svg {
+    fill: #e71313;
+}
+
+/* Custom checkbox styling */
+.custom-checkbox {
+    border: 2px solid green;
+    border-radius: 50%;
+    min-height: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transition: 200ms ease;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox {
+    background-color: rgb(115, 175, 24);
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox svg {
+    fill: var(--primary-color);
+}
+
+input[type="checkbox"]:checked ~ .todo-text {
+    text-decoration: line-through;
+    color: var(--secondary-color);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Digital clock styling */
+#digital-clock {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 150px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0e0c0c;
+    background: #FF007F; /* Glassy effect */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Border for depth */
+    backdrop-filter: blur(10px); /* Glassy background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
+    z-index: 1000; /* Ensures it stays on top */
+}
+
+/* Base styles for the quote container */
+#quote-container {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-style: italic;
+    color: #555;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid black; /* Black border added */
+}
+
+/* Media query for tablets and smaller screens */
+@media (max-width: 768px) {
+    #quote-container {
+        font-size: 16px;  /* Slightly smaller text for smaller screens */
+        width: 95%;  /* Slightly larger width to fit better on small screens */
+    }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 500px) {
+    #quote-container {
+        font-size: 14px;  /* Even smaller text for mobile screens */
+        padding: 8px;  /* Smaller padding */
+        width: 100%;  /* Full width on mobile */
+        bottom: 5px;  /* Adjust the bottom spacing for mobile */
+    }
+}
