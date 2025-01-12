@@ -10,3 +10,6 @@ The To-Do app is a clean, responsive, and user-friendly web application designed
 - **Accessibility**: Thoughtful color contrasts, intuitive controls, and clear task statuses enhance the app's accessibility.  
 
 This To-Do app blends practicality with aesthetics, making it a perfect companion for staying productive and organized!
+
+![image](https://github.com/user-attachments/assets/8c338856-875d-4c34-bfc5-bd3ecbafcfb0)
+
